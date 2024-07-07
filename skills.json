@@ -1,0 +1,98 @@
+[
+    {
+        "name": "M365 Admin",
+        "icon": "./assets/images/skills/mo365admin.png"
+    },
+    {
+        "name": "CCSP®",
+        "icon": "./assets/images/skills/ccsp.png"
+    },
+    {
+        "name": "Linux",
+        "icon": "./assets/images/skills/linux.png"
+    },
+    {
+        "name": "AWS",
+        "icon": "./assets/images/skills/aws.png"
+    },
+    {
+        "name": "github",
+        "icon": "./assets/images/skills/github.png"
+    },
+    {
+        "name": "python",
+        "icon": "./assets/images/skills/python.png"
+    },
+    {
+        "name": "bash",
+        "icon": "./assets/images/skills/bash.png"
+    },
+    {
+        "name": "PowerShell",
+        "icon": "./assets/images/skills/powershell.png"
+    },
+    {
+        "name": "Docker",
+        "icon": "./assets/images/skills/docker.png"
+    },
+    {
+        "name": "kubernetes",
+        "icon": "./assets/images/skills/kubernetes.png"
+    },
+    {
+        "name": "CI/CD",
+        "icon": "./assets/images/skills/jenkins.png"
+    },
+    {
+        "name": "Monitoring",
+        "icon": "./assets/images/skills/monitoring.png"
+    },
+    {
+        "name": "Terraform",
+        "icon": "./assets/images/skills/terraform.png"
+    },
+    {
+        "name": "firewall",
+        "icon": "./assets/images/skills/firewall.png"
+    },
+    {
+        "name": "VMware",
+        "icon": "./assets/images/skills/vmware.png"
+    },
+    {
+        "name": "Networking",
+        "icon": "./assets/images/skills/networking.png"
+    },
+    {
+        "name": "Storage",
+        "icon": "./assets/images/skills/storage.png"
+    },
+    {
+        "name": "Jamf",
+        "icon": "./assets/images/skills/jamf.png"
+    },
+    {
+        "name": "WaF",
+        "icon": "./assets/images/skills/waf.png"
+    },
+    {
+        "name": "CrowdStrike",
+        "icon": "./assets/images/skills/crowdStrike.png"
+    },
+    {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    },
+    {
+        "name": "PostgreSQL",
+        "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
+    },
+    {
+        "name": "Automation",
+        "icon": "./assets/images/skills/automation.png"
+    },
+    {
+        "name": "Git",
+        "icon": "https://img.icons8.com/color/48/000000/git.png"
+    }   
+]

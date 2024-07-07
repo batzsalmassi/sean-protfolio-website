@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- BOX ICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="assets/img/SeanSalmassi.jpg"  type="image/jpg">
+
+        <title>Sean Salmassi</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav_logo">Sean Salmassi</a>
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list">
+                        <li class="nav_item">
+                            <a href="#home" class="nav_link active-link">
+                                <i class='bx bx-home nav_icon'></i>Home
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#profile" class="nav_link">
+                                <i class='bx bx-user nav_icon'></i>Profile
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#education" class="nav_link">
+                                <i class='bx bx-book nav_icon'></i>Education
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#skills" class="nav_link">
+                                <i class='bx bx-receipt nav_icon'></i>Skills
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#experience" class="nav_link">
+                                <i class='bx bx-briefcase-alt nav_icon'></i>Experience
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#certificate" class="nav_link">
+                                <i class='bx bx-award nav_icon'></i>Certificate
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#references" class="nav_link">
+                                <i class='bx bx-link-external nav_icon'></i>References
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main bd-container">
+            <!-- All elements within this div, is generated in PDF -->
+            <div class="resume" id="area-cv">
+                <div class="resume__left">
+                    <!-- HOME -->
+                    <section class="home" id="home">
+                        <div class="home_containter section bd-grid">
+                            <div class="home_data bd-grid">
+                                <img src="assets/img/SeanSalmassi.jpg" alt="" class="home_img center">
+                                <h1 class="home_title">Sean <b>Salmassi</b></h1>
+                                <h3 class="home_profession">Senior IT Specialist</h3>
+                                <!-- Button to generate and download the pdf. Available for desktop. -->
+                                <div>
+                                    <a download="" href="javascript:generateResume();" class="home_button-movil">Download</a>
+                                </div>
+                            </div>
+                            <div class="home_address bd-grid">
+                                <span class="home_information">
+                                    <i class="bx bx-map"> &nbsp; </i> Tel Aviv, Israel 
+                                </span>
+                                <span class="home_information">
+                                    <i class="bx bx-envelope"> &nbsp; </i> Sean.salmassi1@gmail.com
+                                </span>
+                                <span class="home_information">
+                                    <i class="bx bx-phone"> &nbsp; </i> 0505426929
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Theme change button -->
+                        <i class="bx bx-moon change-theme" title="Theme" id="theme-button"></i>
+                        <!-- Button to generate and download the pdf. Available for desktop -->
+                        <i class="bx bx-download generate-pdf" title="Generate PDF" id="resume-button"></i>
+                    </section>          
+                    
+                    <!-- SOCIAL -->
+                    <section class="social section">
+                        <h2 class="section-title">SOCIAL</h2>
+                        <div class="social_container bd-grid">
+                            <a href="https://www.linkedin.com/in/sean-salmassi-661246175/" target="_blank" class="social_link">
+                                <i class="bx bxl-linkedin-square social_icon"></i> @SeanSalmassi
+                            </a>
+                            <a href="https://github.com/batzsalmassi" target="_blank" class="social_link">
+                                <i class="bx bxl-github social_icon"></i> @SeanSalmassi
+                            </a>
+
+                        </div>
+                    </section>
+                    <!-- PROFILE -->
+                    <section class="profile section" id="profile">
+                        <h2 class="section-title">Profile</h2>
+                        <p class="profile_description">
+                            Driven by a passion for IT and Cyber Security, 
+                            Started my career as Customer Service Technical Support specialist at Rivhit.
+                            After completing my studies at HackerU with course honors, I advanced to a System Engineer role at Snyk.
+                            With dedication and hard work, I have now progressed to a Senior Information Technology Specialist at Viz.ai.
+                            With over five years of experience in the IT field, I've started a DevSecOps course at Bar-Ilan University,
+                            and I am eager to continue growing, learning, and making meaningful contributions to the industry.
+                        </p>
+                    </section>
+                    
+                    <!-- EDUCATION -->
+                    <section class="education section" id="education">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education_container bd-grid">
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">DevSecOps Engineer</h3>
+                                    <span class="education_studies">Bar-Ilan University</span>
+                                    <span class="education_year">2024 – 2025</span>
+                                </div>
+                            </div>
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                    <!-- <span class="education_line"></span> -->
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">Cyber & Information Security</h3>
+                                    <span class="education_studies">HackerU College</span>
+                                    <span class="education_year">2018 – 2019</span>
+                                </div>
+                            <!-- </div>
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span> -->
+                                    <!-- <span class="education_line"></span> -->
+                                <!-- </div> -->
+                                <!-- <div class="education_data bd-grid">
+                                    <h3 class="education_title">MATRICULATION</h3>
+                                    <span class="education_studies">University Public School, Peshawar</span>
+                                    <span class="education_year">2012 - 2014</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </section>
+                    <!-- SKILLS  -->
+                    <section class="skills section" id="skills">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skills_content bd-grid">
+                            <ul class="skills_data">
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> AWS Services
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> SSO | Provioning | SAML
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> Docker | Kubernetes | Jenkins
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> Cloudflare | CrowdStrike
+                                </li>
+                            </ul>
+                            <ul class="skills_data">
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> Workato | Atlassian | Gsuite
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> Jamf | Airwatch | Intune
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> Windows | Linux | Mac
+                                </li>
+                                <li class="skills_name">
+                                    <span class="skills_circle"></span> PowerShell | Python | Bash
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div class="resume__right">
+                    <!-- EXPERIENCE -->
+                    <section class="experience section" id="experience">
+                        <h2 class="section-title">Experience</h2>
+                        <div class="experience_container bd-grid">
+                            <div class="experience_content">
+                                <div class="experience_time">
+                                    <span class="experience_rounder"></span>
+                                    <span class="experience_line"></span>
+                                </div>
+                                <div class="experience_data bd-grid">
+                                    <h3 class="experience_title">Senior IT Specialist, at Viz.ai</h3>
+                                    <span class="experience_company">Feb 2024 – Till date | <a href="https://Viz.ai/">Viz.ai</a> </span>
+                                    <p class="experience_description">
+                                        <ul>
+                                            &#8226; Managing AWS IAM permissions via Terraform.<br>
+                                            &#8226; Building and managing business automations using Workato.<br>
+                                            &#8226; Direct work with the R&D team, Programmers, Managers, and Executives.<br>
+                                            &#8226; Part of the implementation of a Zero Trust project.
+                                            Enforcing employees to sign into Okta only from a managed laptop in Jamf with a certificate.<br>
+                                            &#8226; Implementing Jamf Connect on company MacOs laptops.
+                                            A device can only be configured by company employee while,
+                                            enforcing Okta login to setup the company laptops.<br>
+                                            &#8226; Full management of: Jamf, Okta, Google Workspace, Jira, Slack, Cloudflare, and much more.<br>
+                                            &#8226; Work with closely different vendors across the globe.<br>
+                                            &#8226; Managing company Route 53 DNS records and Certificate renewals.
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience_content">
+                                <div class="experience_time">
+                                    <span class="experience_rounder"></span>
+                                    <span class="experience_line"></span>
+                                </div>
+                                <div class="experience_data bd-grid">
+                                    <h3 class="experience_title">Helpdesk Manager, at Viz.ai</h3>
+                                    <span class="experience_company">Mar 2023 – Feb 2024 | <a href="https://Viz.ai/">Viz.ai</a></span>
+                                    <p class="experience_description">
+                                        <ul>
+                                            &#8226; Led a team of 2 help desk technicians, providing technical support to over 350 employees.<br>
+                                            &#8226; Developed and implemented help desk policies and procedures, improving response time and customer satisfaction.<br>
+                                            &#8226; Ensured compliance with IT security policies and conducted regular audits.<br>
+                                            &#8226; Managed inventory of IT assets, overseeing procurement, deployment, and decommissioning of hardware.<br>
+                                            &#8226; Provided technical support and assistance to the company's clients and
+                                            colleagues and worked closely with employees in order to diagnose and resolve
+                                            any IT related problematic issues.
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience_content">
+                                <div class="experience_time">
+                                    <span class="experience_rounder"></span>
+                                    <span class="experience_line"></span>
+                                </div>
+                                <div class="experience_data bd-grid">
+                                    <h3 class="experience_title">Senior IT Support Specialist, at Viz.ai</h3>
+                                    <span class="experience_company">Nov 2022 – Mar 2023 | <a href="https://www.Viz.ai/">Viz.ai</a></span>
+                                    <p class="experience_description">
+                                        <ul>
+                                            &#8226; Provided technical support and assistance to the company's.<br>
+                                            colleagues and worked closely with customers in order to diagnose and resolve
+                                            any IT related problematic issues.<br>
+                                            &#8226; Managed inventory of IT assets in Jamf/Airwatch, and Policies deployments.<br>
+                                            &#8226; Built and implemented a new onboarding/offboarding process for new/terminated users
+                                            while ensuring compliance with IT security policies.<br>
+                                            &#8226; Building and managing business automations using Workato.<br>
+                                            &#8226; Assisted in the implementation of a new HRIS system, improving data accuracy and onboarding efficiency.
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience_content">
+                                <div class="experience_time">
+                                    <span class="experience_rounder"></span>
+                                    <span class="experience_line"></span>
+                                </div>
+                                <div class="experience_data bd-grid">
+                                    <h3 class="experience_title">Technical Operation Specialist, at Snyk</h3>
+                                    <span class="experience_company">Apr 2021 – Nov 2022 | <a href="https://snyk.io">Snyk</a></span>
+                                    <p class="experience_description">
+                                        <ul>
+                                            &#8226; Working in a global team in a different timezones while keeping the team communicated and united.<br>
+                                            &#8226; Managed the onboarding process during a period of rapid company growth, over 200 employees across IL and EU.<br>
+                                            &#8226; Coordinated with HR and IT departments to ensure seamless integration of new hires into the company's systems and processes.<br>
+                                            &#8226; Configured and deployed laptops, ensuring all necessary software and security protocols were in place - Jamf/Intune.<br>
+                                            &#8226; Maintained and updated internal documentation related to onboarding procedures and IT policies.<br>
+                                            &#8226; Managed company users in GSuite, Okta, Jira, Slack, and other SaaS applications.
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience_content">
+                                <div class="experience_time">
+                                    <span class="experience_rounder"></span>
+                                    <!-- <span class="experience_line"></span> -->
+                                </div>
+                                <div class="experience_data bd-grid">
+                                    <h3 class="experience_title">Customer Service Technical Support, at Rivhit</h3>
+                                    <span class="experience_company">Mar 2018 – Apr 2021 | <a href="https://www.rivhit.co.il/">Rivhit</a></span>
+                                    <p class="experience_description">
+                                        <ul>
+                                            &#8226; Provided technical support for business customers using Rivhit software.<br>
+                                            Addressing a wide range of technical issues and queries.<br>
+                                            &#8226; Assisted customers with the installation and configuration of Rivhit software, ensuring optimal performance.<br>
+                                            &#8226; Collaborated with the development team to identify and resolve software bugs, contributing to product improvement.<br>
+                                            &#8226; Built strong relationships with customers by providing exceptional support and service.
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CERTIFICATES -->
+                    <section class="certificate section" id="certificate">
+                        <h2 class="section-title">Certificates</h2>
+                        <div class="certificate_container bd-grid">
+                            <div class="certificate_content">
+                                <h3 class="certificate_title">Workato - 2022</h3>
+                                <p class="certificate_description">
+                                    Workato Automation 1
+                                </p>
+                            </div>
+                            <div class="certificate_content">
+                                <h3 class="certificate_title">Workato - 2023</h3>
+                                <p class="certificate_description">
+                                    Workato Automation 2
+                                </p>
+                            </div>
+                            <div class="certificate_content">
+                                <h3 class="certificate_title">Jamf - 2023</h3>
+                                <p class="certificate_description">
+                                    Jamf Certified Tech
+                                </p>
+                            </div>
+                            <div class="certificate_content">
+                                <h3 class="certificate_title">CC - 2024 </h3>
+                                <p class="certificate_description">
+                                    ISC2 – Certified in Cybersecurity
+                                </p>
+                            </div>
+                            <div class="certificate_content">
+                                <h3 class="certificate_title">CLF-C02 - 2024 </h3>
+                                <p class="certificate_description">
+                                    AWS Certified Cloud Practitioner
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- REFERENCES -->
+                    <!-- <section class="references section" id="references">
+                        <h2 class="section-title">References</h2>
+                        <div class="references_container bd-grid">
+                            <div class="references_content bd-grid">
+                                <span class="references_subtitle">CEO IT-Artificer</span>
+                                <h3 class="references_title">Mr. Haider Ali</h3>
+                                <ul class="references_contact">
+                                    <li>Phone:  +92-333-9296314</li>
+                                    <li>Email:  thehaider@yahoo.com</li>
+                                </ul>
+                            </div>
+                            <div class="references_content bd-grid">
+                                <span class="references_subtitle">Professor</span>
+                                <h3 class="references_title">Dr. Irshad Ahmad</h3>
+                                <ul class="references_contact">
+                                    <li>Phone:  091-9222258</li>
+                                    <li>Email:  Irshad.ahmad@icp.edu.pk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section> -->
+                    <!-- LANGUAGES -->
+                    <section class="languages section">
+                        <h2 class="section-title">Languages</h2>
+                        <div class="languages_container">
+                            <ul class="languages_content bd-grid">
+                                <li class="languages_name">
+                                    <span class="languages_circle"></span> Hebrew – Native language
+                                </li>
+                                <li class="languages_name">
+                                    <span class="languages_circle"></span> English - Fluent
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- INTERESTS -->
+                    <section class="interests section">
+                        <h2 class="section-title">Interests</h2>
+                        <div class="interests_container bd-grid">
+                            <div class="interests_content">
+                                <i class='bx bx-code-alt interests_icon'></i>
+                                <span class="interests_name">Learning</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class='bx bx-male-female interests_icon' ></i>
+                                <span class="interests_name">Family</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="bx bxs-plane-alt interests_icon"></i>
+                                <span class="interests_name">Traveling</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class='bx bx-run interests_icon' ></i>
+                                <span class="interests_name">Workout</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>        
+        </main> 
+
+        <!-- SCROLL TOP -->
+            <a href="#" class="scrolltop" id="scrolltop">
+                <i class="bx bx-up-arrow-alt scrolltop_icon"></i>
+            </a>
+
+        <!-- HTML2PDF -->
+        <script src="assets/js/html2pdf.bundle.min.js"></script>
+        
+        <!-- MAIN JS -->
+        <script src="assets/js/main.js"></script>
+        <script>
+            // Get the area to be converted to PDF
+            const areaToPrint = document.getElementById('area-cv');
+          
+            // Create a new instance of the html2pdf library
+            const html2pdf = window.html2pdf;
+          
+            // Define the options for the PDF generation
+            const options = {
+              margin: 0,
+              filename: 'Sean-Salmassi-Resume.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 4 },
+              jsPDF: { format: 'a4', orientation: 'portrait' }
+            };
+          
+            // Function to generate the PDF
+            function generateResume() {
+              // Generate the PDF and trigger the download
+              html2pdf().set(options).from(areaToPrint).save();
+            }
+          
+            // Get the download button
+            const resumeButton = document.getElementById('resume-button');
+          
+            // Attach a click event listener to the download button
+            resumeButton.addEventListener('click', generateResume);
+          </script>
+    </body> <br>
+</html>
