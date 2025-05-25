@@ -1,12 +1,22 @@
 [
   {
     "name": "Protfolio Website",
-    "desc": "My protfolio website built with HTML, CSS, and JavaScript. It is hosted on AWS S3 and CloudFront.",
+    "desc": "My protfolio website built with HTML, CSS, and JavaScript. It is hosted on AWS S3 and CloudFront, with CI/CD Workflow to deploy the website automatically for any changes.",
     "image": "protfolio-website",
     "category": "basicweb",
     "links": {
       "view": "https://seansalmassi.com",
       "code": "https://github.com/batzsalmassi/sean-protfolio-website"
+    }
+  },
+  {
+    "name": "Ziput Website",
+    "desc": "Built a website for my father's company. It's a website for a company that provides services for sealing roofs and basements. It's built with React, Tailwind CSS, and TypeScript. It's hosted on AWS S3 and CloudFront, and have a fully CI/CD Pipeline.",
+    "image": "salmassi-itum",
+    "category": "basicweb",
+    "links": {
+      "view": "https://salmassi-itum.com",
+      "code": ""
     }
   }
 ]
