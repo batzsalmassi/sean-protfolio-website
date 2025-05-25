@@ -1,0 +1,143 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  # CI Job - runs on PRs to validate the website
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Validate HTML files
+      run: |
+        echo "🔍 Validating HTML structure..."
+        # Check if index.html exists and is valid
+        if [ ! -f "index.html" ]; then
+          echo "❌ index.html not found!"
+          exit 1
+        fi
+        
+        # Basic HTML validation - check for required tags
+        if ! grep -q "<html" index.html; then
+          echo "❌ index.html missing <html> tag!"
+          exit 1
+        fi
+        
+        if ! grep -q "<head>" index.html; then
+          echo "❌ index.html missing <head> section!"
+          exit 1
+        fi
+        
+        if ! grep -q "<title>" index.html; then
+          echo "❌ index.html missing <title> tag!"
+          exit 1
+        fi
+        
+        echo "✅ HTML validation passed!"
+
+    - name: Check file structure
+      run: |
+        echo "🔍 Checking file structure..."
+        
+        # Check for required directories and files
+        required_files=("index.html" "404.html")
+        required_dirs=("assets")
+        
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Required file missing: $file"
+            exit 1
+          fi
+        done
+        
+        for dir in "${required_dirs[@]}"; do
+          if [ ! -d "$dir" ]; then
+            echo "❌ Required directory missing: $dir"
+            exit 1
+          fi
+        done
+        
+        echo "✅ File structure validation passed!"
+
+    - name: Check for broken internal links
+      run: |
+        echo "🔍 Checking for basic link issues..."
+        
+        # Check if CSS files referenced in HTML actually exist
+        if grep -q "\.css" index.html; then
+          echo "📄 CSS references found in HTML"
+          # Extract CSS file paths and check if they exist
+          css_files=$(grep -o 'href="[^"]*\.css"' index.html | sed 's/href="//g' | sed 's/"//g' || true)
+          for css_file in $css_files; do
+            # Remove leading slash and check if file exists
+            clean_path=$(echo "$css_file" | sed 's|^/||')
+            if [ ! -f "$clean_path" ]; then
+              echo "⚠️  CSS file referenced but not found: $css_file"
+            else
+              echo "✅ CSS file found: $css_file"
+            fi
+          done
+        fi
+        
+        echo "✅ Link validation completed!"
+
+    - name: Validate JSON files
+      run: |
+        echo "🔍 Validating JSON files..."
+        
+        # Check if skills.json is valid JSON
+        if [ -f "skills.json" ]; then
+          if python3 -m json.tool skills.json > /dev/null; then
+            echo "✅ skills.json is valid JSON"
+          else
+            echo "❌ skills.json is invalid JSON!"
+            exit 1
+          fi
+        fi
+        
+        echo "✅ JSON validation passed!"
+
+  # CD Job - runs only on pushes to main/master (after merge)
+  deploy:
+    name: Continuous Deployment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Deploy to S3
+      run: |
+        echo "🚀 Deploying to S3..."
+        aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*" --exclude ".DS_Store" --exclude "README.md" --exclude "*.bak" --cache-control max-age=31536000
+        aws s3 cp s3://${{ secrets.S3_BUCKET_NAME }}/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html --cache-control max-age=0,no-cache,no-store,must-revalidate
+        echo "✅ S3 deployment completed!"
+
+    - name: Invalidate CloudFront
+      run: |
+        echo "🔄 Invalidating CloudFront cache..."
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        echo "✅ CloudFront invalidation completed!"
+
+    - name: Deployment summary
+      run: |
+        echo "🎉 Deployment successful!"
+        echo "Your website has been updated and will be live shortly." 
