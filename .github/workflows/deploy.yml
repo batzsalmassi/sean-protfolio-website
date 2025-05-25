@@ -122,7 +122,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+        aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Deploy to S3
       run: |
@@ -134,8 +134,12 @@ jobs:
     - name: Invalidate CloudFront
       run: |
         echo "🔄 Invalidating CloudFront cache..."
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-        echo "✅ CloudFront invalidation completed!"
+        if aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" > /dev/null 2>&1; then
+          echo "✅ CloudFront invalidation completed!"
+        else
+          echo "❌ CloudFront invalidation failed!"
+          exit 1
+        fi
 
     - name: Deployment summary
       run: |
