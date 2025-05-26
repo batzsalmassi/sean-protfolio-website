@@ -22,8 +22,8 @@
   {
     "name": "ShodApp Application",
     "desc": "A full-stack application built with React frontend, Node.js backend, and PostgreSQL database. Features include user authentication, Shodan API integration, and real-time data visualization. The application is containerized and deployed using Kubernetes.",
-    "image": "shodapp",
-    "category": "shodapp-home",
+    "image": "shodapp-home",
+    "category": "devops",
     "links": {
       "view": "https://shodapp.seansalmassi.com",
       "code": "https://github.com/batzsalmassi/shodapp-k8s"
