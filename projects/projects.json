@@ -10,13 +10,33 @@
     }
   },
   {
-    "name": "Ziput Website",
-    "desc": "Built a website for my father's company. It's a website for a company that provides services for sealing roofs and basements. It's built with React, Tailwind CSS, and TypeScript. It's hosted on AWS S3 and CloudFront, and have a fully CI/CD Pipeline.",
+    "name": "Sealing Website",
+    "desc": "Built a website for my father's company. It's built with React, Tailwind CSS, and TypeScript. It's hosted on AWS S3 and CloudFront, and have a fully CI/CD Pipeline.",
     "image": "salmassi-itum",
     "category": "basicweb",
     "links": {
       "view": "https://salmassi-itum.com",
       "code": ""
+    }
+  },
+  {
+    "name": "ShodApp Application",
+    "desc": "A full-stack application built with React frontend, Node.js backend, and PostgreSQL database. Features include user authentication, Shodan API integration, and real-time data visualization. The application is containerized and deployed using Kubernetes.",
+    "image": "shodapp",
+    "category": "shodapp-login",
+    "links": {
+      "view": "https://shodapp.seansalmassi.com",
+      "code": "https://github.com/batzsalmassi/shodapp"
+    }
+  },
+  {
+    "name": "ShodApp Infrastructure",
+    "desc": "Infrastructure as Code (IaC) project using Terraform to provision AWS resources including EKS cluster, RDS, and networking components. Implements GitOps with ArgoCD for continuous deployment and GitHub Actions for infrastructure CI/CD. Features automated infrastructure testing and deployment workflows.",
+    "image": "shodapp-home",
+    "category": "devops",
+    "links": {
+      "view": "https://github.com/batzsalmassi/shodapp-k8s-infra",
+      "code": "https://github.com/batzsalmassi/shodapp-k8s-infra"
     }
   }
 ]
