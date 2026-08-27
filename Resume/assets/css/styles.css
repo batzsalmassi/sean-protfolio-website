@@ -176,7 +176,7 @@ body.scale-cv{
 
 .scale-cv .experience_line{
   width: 1px;
-  height: 130px;
+  height: 110%;
   transform: translate(5px, 0);
 }
 
@@ -184,6 +184,11 @@ body.scale-cv{
 .scale-cv .experience_data{
   gap: .20rem;
   font-size: 12px;
+}
+
+.scale-cv .experience_data ul {
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 
@@ -482,6 +487,11 @@ img {
 .experience_company {
   font-size: var(--small-font-size);
   color: var(--title-color);
+}
+
+.experience_description {
+  font-size: var(--smaller-font-size);
+  line-height: 1.4;
 }
 
 .education_year {

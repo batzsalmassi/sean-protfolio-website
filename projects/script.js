@@ -21,7 +21,7 @@ document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Projects | Portfolio Sean Salmassi";
-            $("#favicon").attr("href", "/assets/images/seanmemoji.png");
+            $("#favicon").attr("href", "/assets/images/seanmemoji.jpg");
         }
         else {
             document.title = "Come Back To Portfolio";
@@ -40,8 +40,22 @@ function getProjects() {
 }
 
 
+function projectButtons(links) {
+    const buttons = [];
+    if (links && links.view) {
+        buttons.push(`<a href="${links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`);
+    }
+    if (links && links.code) {
+        buttons.push(`<a href="${links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>`);
+    }
+    return buttons.length ? `<div class="btns">${buttons.join("")}</div>` : "";
+}
+
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
+    if (!projectsContainer) {
+        return;
+    }
     let projectsHTML = "";
     projects.forEach(project => {
         projectsHTML += `
@@ -54,10 +68,7 @@ function showProjects(projects) {
         </div>
         <div class="desc">
           <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
+          ${projectButtons(project.links)}
         </div>
       </div>
     </div>

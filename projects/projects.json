@@ -1,22 +1,52 @@
 [
   {
-    "name": "Protfolio Website",
-    "desc": "My protfolio website built with HTML, CSS, and JavaScript. It is hosted on AWS S3 and CloudFront, with CI/CD Workflow to deploy the website automatically for any changes.",
-    "image": "protfolio-website",
-    "category": "basicweb",
+    "name": "JIT Access Platform",
+    "desc": "Company-wide just-in-time access platform. Replaced standing privileges with time-bound, audited access across RDS, S3, DynamoDB, Redash, and OpenSearch, including an Emergency Access tier, Workato request workflows, and break-glass DB login.",
+    "image": "jit-access-platform",
+    "category": "devsecops",
     "links": {
-      "view": "https://seansalmassi.com",
-      "code": "https://github.com/batzsalmassi/sean-protfolio-website"
+      "view": "",
+      "code": ""
     }
   },
   {
-    "name": "Sealing Website",
-    "desc": "Built a website for my father's company. It's built with React, Tailwind CSS, and TypeScript. It's hosted on AWS S3 and CloudFront, and have a fully CI/CD Pipeline.",
-    "image": "salmassi-itum",
-    "category": "basicweb",
+    "name": "WAF Hardening",
+    "desc": "Rolled out geolocation restrictions and a full L7 DDoS WAF ruleset in count mode, then tuned rules over two weeks across QA and Production.",
+    "image": "waf-hardening",
+    "category": "devsecops",
     "links": {
-      "view": "https://salmassi-itum.com",
+      "view": "",
       "code": ""
+    }
+  },
+  {
+    "name": "Zero Trust Edge",
+    "desc": "Moved Mobile and QA environments behind the company network. Built a service user and VPN auth step in GitHub Actions so Appium tests originate from trusted IPs, avoiding ~$350/month in macOS runners.",
+    "image": "cloudflare-zero-trust",
+    "category": "devsecops",
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  },
+  {
+    "name": "Cloud Security Posture",
+    "desc": "Rotated 321 GCP/customer access keys, reduced AWS Lambda deprecated-runtime functions from 32 to 14, cut Wiz Medium findings 15% from 1,025, and enforced Amazon Bedrock Guardrails across AWS accounts.",
+    "image": "cloud-security-posture",
+    "category": "devsecops",
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  },
+  {
+    "name": "ShodApp Infrastructure",
+    "desc": "Infrastructure as Code (IaC) project using Terraform to provision AWS resources including EKS cluster, RDS, and networking components. Implements GitOps with ArgoCD for continuous deployment and GitHub Actions for infrastructure CI/CD.",
+    "image": "shodapplogin",
+    "category": "devops",
+    "links": {
+      "view": "https://shodapp.seansalmassi.com",
+      "code": "https://github.com/batzsalmassi/shodapp-k8s-infra"
     }
   },
   {
@@ -30,13 +60,23 @@
     }
   },
   {
-    "name": "ShodApp Infrastructure",
-    "desc": "Infrastructure as Code (IaC) project using Terraform to provision AWS resources including EKS cluster, RDS, and networking components. Implements GitOps with ArgoCD for continuous deployment and GitHub Actions for infrastructure CI/CD.",
-    "image": "shodapplogin",
-    "category": "devops",
+    "name": "Portfolio Website",
+    "desc": "Personal portfolio website built with HTML, CSS, and JavaScript. Hosted on AWS S3 and CloudFront, with a CI/CD workflow that deploys automatically on every change.",
+    "image": "protfolio-website",
+    "category": "basicweb",
     "links": {
-      "view": "https://shodapp.seansalmassi.com",
-      "code": "https://github.com/batzsalmassi/shodapp-k8s-infra"
+      "view": "https://seansalmassi.com",
+      "code": "https://github.com/batzsalmassi/sean-protfolio-website"
+    }
+  },
+  {
+    "name": "Sealing Website",
+    "desc": "Website for my father's company, built with React, Tailwind CSS, and TypeScript. Hosted on AWS S3 and CloudFront with a full CI/CD pipeline.",
+    "image": "salmassi-itum",
+    "category": "basicweb",
+    "links": {
+      "view": "https://salmassi-itum.com",
+      "code": ""
     }
   }
 ]

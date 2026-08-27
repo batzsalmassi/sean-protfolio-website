@@ -239,16 +239,18 @@ header .navbar ul li a:hover{
   font-size: 2rem;
 }
 .work .box-container .box:hover .content{
-  top: 25%;
+  top: 12%;
 }
 .work .desc {
   margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
 }
 .work .desc p{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  text-transform: none;
 }
 .work .desc .btns{
   display: flex;

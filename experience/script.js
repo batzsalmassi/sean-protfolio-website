@@ -66,7 +66,7 @@ document.addEventListener('visibilitychange',
 function(){
     if(document.visibilityState === "visible"){
         document.title = "Experience | Portfolio Sean Salmassi";
-        $("#favicon").attr("href","/assets/images/seanmemoji.png");
+        $("#favicon").attr("href","/assets/images/seanmemoji.jpg");
     }
     else {
         document.title = "Come Back To Portfolio";

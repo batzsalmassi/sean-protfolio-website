@@ -31,10 +31,16 @@ $(document).ready(function () {
 
     // smooth scrolling
     $('a[href*="#"]').on('click', function (e) {
+        const href = $(this).attr('href');
+        const hash = href ? href.slice(href.indexOf('#')) : '';
+        const target = hash && hash !== '#' ? $(hash) : $();
+        if (!target.length) {
+            return;
+        }
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+            scrollTop: target.offset().top,
+        }, 500, 'linear');
     });
 
     // <!-- emailjs to mail contact form data -->
@@ -71,7 +77,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Systems Engineer", "DevOps Engineer", "DevSecOps Engineer", "Ethical Hacking"],
+    strings: ["DevSecOps Engineer", "DevOps Engineer", "Cloud Security", "Systems Engineer"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -96,7 +102,7 @@ function showSkills(skills) {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src="${skill.icon}" alt="skill" />
                 <span>${skill.name}</span>
               </div>
             </div>`
@@ -104,8 +110,22 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
+function projectButtons(links) {
+    const buttons = [];
+    if (links && links.view) {
+        buttons.push(`<a href="${links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`);
+    }
+    if (links && links.code) {
+        buttons.push(`<a href="${links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>`);
+    }
+    return buttons.length ? `<div class="btns">${buttons.join("")}</div>` : "";
+}
+
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
+    if (!projectsContainer) {
+        return;
+    }
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
@@ -117,10 +137,7 @@ function showProjects(projects) {
         </div>
         <div class="desc">
           <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
+          ${projectButtons(project.links)}
         </div>
       </div>
     </div>`
