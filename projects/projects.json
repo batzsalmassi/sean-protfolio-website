@@ -10,8 +10,8 @@
     }
   },
   {
-    "name": "WAF Hardening",
-    "desc": "Rolled out geolocation restrictions and a full L7 DDoS WAF ruleset in count mode, then tuned rules over two weeks across QA and Production.",
+    "name": "WAF Implementation",
+    "desc": "Implemented a company-wide WAF with geolocation restrictions, L7 DDoS protection, and threat intelligence. Rolled out in count mode and tuned rules over two weeks across QA and Production.",
     "image": "waf-hardening",
     "category": "devsecops",
     "links": {
@@ -31,7 +31,7 @@
   },
   {
     "name": "Cloud Security Posture",
-    "desc": "Rotated 321 GCP/customer access keys, reduced AWS Lambda deprecated-runtime functions from 32 to 14, cut Wiz Medium findings 15% from 1,025, and enforced Amazon Bedrock Guardrails across AWS accounts.",
+    "desc": "Rotated 321 GCP/customer access keys, reduced AWS Lambda deprecated-runtime functions from 32 to 0, cut Wiz findings by 75%, and enforced Amazon Bedrock Guardrails across AWS accounts.",
     "image": "cloud-security-posture",
     "category": "devsecops",
     "links": {

@@ -128,7 +128,11 @@ jobs:
       run: |
         echo "🚀 Deploying to S3..."
         aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*" --exclude ".DS_Store" --exclude "README.md" --exclude "*.bak" --cache-control max-age=31536000
-        aws s3 cp s3://${{ secrets.S3_BUCKET_NAME }}/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html --cache-control max-age=0,no-cache,no-store,must-revalidate
+        echo "📄 Setting no-cache on HTML so resume and pages update immediately..."
+        find . -name '*.html' -not -path './.git/*' | while read -r file; do
+          key="${file#./}"
+          aws s3 cp "$file" "s3://${{ secrets.S3_BUCKET_NAME }}/$key" --cache-control "max-age=0,no-cache,no-store,must-revalidate" --content-type "text/html" --metadata-directive REPLACE
+        done
         echo "✅ S3 deployment completed!"
 
     - name: Invalidate CloudFront
