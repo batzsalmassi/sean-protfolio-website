@@ -207,14 +207,17 @@ header .navbar ul li a:hover{
   box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
   position: relative;
   overflow:hidden;
-  height:30rem;
-  background: #fff;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  background: #0d1020;
   border: none;
 }
 .work .box-container .box img{
   height: 100%;
   width:100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 .work .box-container .box .content{
   height: 100%;
